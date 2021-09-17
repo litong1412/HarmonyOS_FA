@@ -1,0 +1,21 @@
+<div class="title-box">
+    <div class="text-center title-bar"
+         style="justify-content : space-between" show="{{ showObj }}">
+        <div class="flex-row text-center">
+            <image class="image-button"
+                   src="/common/img/base/back2.png"
+                   style="margin-left : 24px;"
+                    onclick="returnBack"></image>
+            <text class="text-title">{{ $t('resources.' + productId + '.device_name') }}</text>
+        </div>
+        <image class="image-button" style="margin-right : 24px;" src="/common/img/base/ic_public_more.svg"
+               id="img-more" show="{{showMenu}}"></image>
+    </div>
+
+    <menu target="img-more" id="apiMenu" onselected="onMenuSelected">
+        <option for = "{{menuOptions}}" value = "{{$idx}}"> {{ $item.label }} </option>
+    </menu>
+</div>
+
+
+

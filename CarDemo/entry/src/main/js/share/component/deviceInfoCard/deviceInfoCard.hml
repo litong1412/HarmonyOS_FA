@@ -1,0 +1,8 @@
+<div class="text-center flex-column {{ isFullScreen ? 'device-canvas' : '' }}">
+    <div class="text-center {{ isFullScreen ? 'device-img-container-full' : 'device-img-container' }}">
+        <image src="{{deviceResource.device_image}}" class="{{deviceImgStyle}}"></image>
+    </div>
+    <text class="device-name" show="{{ ! isFullScreen }}">{{deviceResource.device_name}}</text>
+    <image class="device-logo" src="/common/img/customised/logo_stripe.webp">
+    </image>
+</div>

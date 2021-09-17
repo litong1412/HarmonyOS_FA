@@ -1,0 +1,54 @@
+{
+    "strings":{
+        "custom_FA_name":"360儿童安全座椅",
+        "public_privacy_statement":"用户协议与隐私声明",
+        "public_agree": "同意",
+        "public_login_hint": "继续使用需要登录并授权",
+        "public_version": "版本",
+        "public_login_btn_text":"华为账号快捷登录",
+        "public_network_error":"网络错误，请稍后重试",
+        "public_system_error":"系统错误，请稍后重试",
+        "public_pair_hint":"正在连接...",
+        "public_pair_hint_failed":"设备配对失败!",
+        "public_cancel":"取消",
+        "public_re_connect":"重新配网",
+        "public_connect_timeout":"连接超时",
+        "public_re_pair":"重新配对",
+        "public_re_connect_hint":"连接失败，请重新配对",
+        "public_re_pairing":"正在重新配对",
+        "public_user_guide": "用户手册"
+    },
+    "resources": {
+        "25HN": {
+            "device_name": "360儿童安全座椅",
+            "device_image": "/common/img/customised/ertongzuoyi.png",
+            "pair_hint_image": "/common/img/customised/chongxinpeiwang.png",
+            "pair_hint_title":"请尝试以下操作并重新配网:",
+            "pair_hint_text": [
+                "1.请确保您的安全座椅已连接电源并开机",
+                "2.请确保手机蓝牙已开启",
+                "3.如果您的使用环境中蓝牙设备较多，可能会存在干扰，请稍后再碰一碰。"
+            ],
+            "operate_open": "已开启",
+            "operate_close": "已关闭",
+            "operate_install": "已安装",
+            "operate_uninstall": "未安装",
+            "operate_safety_belt": "五点式安全带",
+            "operate_sleep": "哄睡",
+            "operate_speed": "风速",
+            "operate_light": "灯光",
+            "operate_volume": "音量",
+            "operate_list1": ["关闭", "1 档","2 档" ,"3 档" ,"自动"],
+            "operate_list2": ["关闭", "1 档","2 档" ,"3 档"],
+            "operate_enabled": "已启用",
+            "tip_safe": "五点式安全带卡扣未扣好，请重试！",
+            "tip_hot": "座椅温度过高，请注意降温",
+            "menu_options": [
+                {
+                    "id" : 0,
+                    "label": "用户手册",
+                    "uri": "pages/guide/guide"
+                }]
+        }
+    }
+}

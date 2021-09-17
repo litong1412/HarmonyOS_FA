@@ -1,0 +1,137 @@
+<element name="titleBar" src="../../../share/component/titleBar/titleBar.hml"></element>
+<!--<element name="deviceInfoCard" src="../../../share/component/deviceInfoCard/deviceInfoCard.hml"></element>-->
+<div class="container {{isFullScreen ? 'full_container' : ''}}" onswipe='swipe_move' onclick="container_click">
+    <titleBar product-id="{{ productId }}"
+              show-obj="{{ isFullScreen }}"
+              onback-clicked="backClicked"
+              menu-options="{{ $t('resources.' + productId + '.menu_options') }}"></titleBar>
+<!--    <deviceInfoCard is-full-screen="{{ isFullScreen }} "-->
+<!--                    product-id="{{ productId }}"></deviceInfoCard>-->
+<!--    <div class="text-cen tipwarn {{isFullScreen ? 'tip_full' : ''}}" show="{{!deviceInfo.already}}">-->
+<!--    tip_hot-->
+    <div class="text-cen tipwarn  {{isFullScreen ? 'tip_full' : ''}} {{isFullScreen && tip_hot ? 'tip_hot' : ''}}" show="{{tip_hot}}">
+        <image src="/common/img/base/warn3.png" class="tip_img" ></image>
+        <text class="tip_text red">
+            {{$t('resources.' + productId + '.tip_hot')}}
+        </text>
+    </div>
+
+    <div class="text-cen tipwarn {{isFullScreen ? 'tip_full' : ''}}" show="{{onSafeState}}">
+        <image src="/common/img/base/warn3.png" class="tip_img"></image>
+        <text class="tip_text red">
+            {{$t('resources.' + productId + '.tip_safe')}}
+        </text>
+    </div>
+
+<!--    <image src="/common/img/customised/ertongzuoyi.png" show="{{isFullScreen}}"  class="seat_all {{ true ? 'seat_top2' : 'seat_top3'}}"></image>-->
+    <image src="/common/img/customised/ertongzuoyi.png" show="{{isFullScreen}}"  class="seat_all {{ deviceInfo.already && onSafeState  ? 'seat_top2' : 'seat_top3'}}"></image>
+<!--    <image src="/common/img/customised/ertongzuoyi.png" show="{{isFullScreen}}"  class="seat_all seat_top2"></image>-->
+
+    <image src="/common/img/customised/ertongzuoyi.png" onclick="image_click" show="{{!isFullScreen}}"  class="seat_img {{ deviceInfo.already && onSafeState || tip_hot ? 'seat_top1' : 'seat_top'}}"></image>
+
+    <text class="seat_head">
+         {{$t('strings.custom_FA_name')}}
+    </text>
+
+    <image src="/common/img/customised/360kids3.png"  class="kids_img"></image>
+
+    <div onclick="imgClick" class="card-common padding-lr text-center connect-status" style="justify-content : space-between;">
+        <text class="title">
+            {{ deviceInfo.switchDesc }}
+        </text>
+        <div show="{{ deviceInfo.already && !onSafeState}}" class="flex-column text-center">
+            <text class="font-24 green">已安装</text>
+            <text class="font-12 green">五点式安全带</text>
+        </div>
+        <div show="{{ deviceInfo.already && onSafeState }}" class="flex-column text-center">
+            <text class="font-24 red">未安装</text>
+            <text class="font-12 red">五点式安全带</text>
+        </div>
+        <image  class="shutdown-img" show="{{!onOpenState}}" onclick="powerOnClick" src="{{ deviceInfo.switchImg }}"></image>
+        <image  class="shutdown-img" show="{{onOpenState}}" onclick="powerOffClick" src="{{ deviceInfo.switchOn }}"></image>
+    </div>
+
+    <div class="feature_box">
+        <list class="features-list {{isFullScreen ? 'full_list' : ''}}" >
+            <list-item type="feature" for="{{features}}" clickeffect="false">
+                <div onclick="icon_click($idx, $item)" class="common-div-effect {{$idx%2===0?'common-margin-right':'common-margin-left'}} {{ onOpenState ? 'on_state' : 'off_state'}}" style="justify-content: space-between">
+                    <div style="flex-direction: column; margin-left: 16px;justify-content: center;">
+                        <text class="font-16" style="text-align: left">{{$item.name}}</text>
+                        <text show="{{$item.value != '关闭'}}" class="color-gray font-12" style="padding-top: 1px; text-align: left;">{{$item.value}}</text>
+                    </div>
+                    <div class="text-center" style="margin-right: 17px;" onclick="icon_click($idx, $item)">
+                        <image show="{{$item.value != '关闭'}}" style="height: 24px;width: 24px; " src="{{$item.iconcolor}}"></image>
+                        <image show="{{$item.value == '关闭'}}" style="height: 24px;width: 24px; " src="{{$item.icon}}"></image>
+                    </div>
+                </div>
+            </list-item>
+        </list>
+
+        <list class="feature_menu common-margin-left  feature_menu2 {{isShowSpeed ? 'notshowSpeed' : 'isShowSpeed'}}" >
+            <list-item  class="feature_item" for="{{speedList}}">
+                    <div onclick="onSpeedMenuSelected({{$idx}})" class="feature_dev">
+                        <div class="feature_text {{$item === features[1].value ? 'feature_active' : 'feature_text'}}   ">
+                            <text class="feature_text1 {{$item === features[1].value ? 'feature_active' : ''}} {{speedList[$idx + 1]  === features[1].value ? 'feature_last' : ''}} {{$idx == 4 ? 'feature_last' : ''}}" >
+                               {{$item}}
+                            </text>
+                        </div>
+                    </div>
+            </list-item>
+        </list>
+
+        <list class="feature_menu common-margin-right feature_menu3 {{isShowLight ? 'notshowSpeed' : 'isShowSpeed'}}">
+            <list-item  class="feature_item" for="{{lightList}}">
+                <div onclick="onLightMenuSelected({{$idx}})" class="feature_dev">
+                    <div class="feature_text {{$item === features[2].value ? 'feature_active' : 'feature_text'}}   ">
+                        <text class="feature_text1 {{$item === features[2].value ? 'feature_active' : ''}} {{lightList[$idx + 1]  === features[2].value ? 'feature_last' : ''}} {{$idx == 3 ? 'feature_last' : ''}}" >
+                            {{$item}}
+                        </text>
+                    </div>
+                </div>
+            </list-item>
+        </list>
+<!--   lightList: ['关闭', '1 档', '2 档', '3 档'],-->
+        <list class="feature_menu common-margin-left feature_menu4 {{isShowSound ? 'notshowSpeed' : 'isShowSpeed'}}">
+            <list-item  class="feature_item" for="{{lightList}}">
+                <div onclick="onSoundMenuSelected({{$idx}})" class="feature_dev">
+                    <div class="feature_text {{$item === features[3].value ? 'feature_active' : 'feature_text'}}">
+                        <text class="feature_text1 {{$item === features[3].value ? 'feature_active' : ''}} {{lightList[$idx + 1]  === features[3].value ? 'feature_last' : ''}} {{$idx == 3 ? 'feature_last' : ''}}" >
+                            {{$item}}
+                        </text>
+                    </div>
+                </div>
+            </list-item>
+        </list>
+    </div>
+
+    <div show="{{!isFullScreen}}"  class="text-center more" onclick="getMoreClick">
+        <text class="color-more" onclick="getMoreClick">查看更多</text>
+    </div>
+
+
+<!--        <menu id="speedMenu" onselected="onspeedMenuSelected">-->
+<!--            <option for="{{speedList}}" value="{{$idx}}" class="option_item {{$item == features[1].value ? 'current_option' : ''}}">-->
+<!--                    {{$item}}-->
+<!--            </option>-->
+<!--        </menu>-->
+
+<!--        <menu id="lightMenu" onselected="onlightMenuSelected">-->
+<!--            <option for="{{lightList}}" value="{{$idx}}" class="option_item {{$item == features[2].value ? 'current_option' : ''}}">-->
+<!--                {{$item}}-->
+<!--            </option>-->
+<!--        </menu>-->
+
+<!--        <menu id="soundMenu" onselected="onsoundMenuSelected">-->
+<!--            <option for="{{lightList}}" value="{{$idx}}" class="option_item {{$item == features[2].value ? 'current_option' : ''}}">-->
+<!--                {{$item}}-->
+<!--            </option>-->
+<!--        </menu>-->
+
+<!--    <div show="{{isFullScreen}}" class="desc padding-lr text-center connect-status" onclick="toDesc"-->
+<!--         style="justify-content : space-between;">-->
+<!--        <text class="title font-65ST">-->
+<!--            使用说明-->
+<!--        </text>-->
+<!--        <image class="desc-img" src="/common/img/base/ic_auto.webp"></image>-->
+<!--    </div>-->
+</div>

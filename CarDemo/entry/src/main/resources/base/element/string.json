@@ -1,0 +1,36 @@
+{
+  "string": [
+    {
+      "name": "entry_MainAbility",
+      "value": "entry_MainAbility"
+    },
+    {
+      "name": "mainability_description",
+      "value": "JS_Empty Ability"
+    },
+    {
+      "name": "controlability_description",
+      "value": "JS_Empty Ability"
+    },
+    {
+      "name": "entry_ControlAbility",
+      "value": "entry_ControlAbility"
+    },
+    {
+      "name": "controlmainability_description",
+      "value": "JS_Empty Ability"
+    },
+    {
+      "name": "entry_ControlMainAbility",
+      "value": "entry_ControlMainAbility"
+    },
+    {
+      "name": "public_bt_down",
+      "value": "蓝牙未连接"
+    },
+    {
+      "name": "public_network_down",
+      "value": "网络未连接"
+    }
+  ]
+}

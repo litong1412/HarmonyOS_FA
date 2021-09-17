@@ -1,0 +1,20 @@
+<element name="logindialog" src="../../../share/component/loginDialog/loginDialog"></element>
+<element name="pairdialog" src="../../../share/component/pairDialog/pairDialog"></element>
+<element name="pairFailedDialog" src="../../../share/component/pairFailedDialog/pairFailedDialog"></element>
+<div class="container">
+    <logindialog state="{{ state }}"
+                 @on-login-success="onLoginSuccess"
+                 @on-login-error="onLoginError"
+                 @on-privacy-agreed="onPrivacyAgreed"></logindialog>
+
+    <pairdialog state="{{ state }}" product-id="{{ productId }}"></pairdialog>
+
+    <pairFailedDialog @on-cancel="cancel"
+                      @on-re-connect="reConnect"
+                      state="{{ state }}"
+                      product-id="{{ productId }}"></pairFailedDialog>
+</div>
+
+
+
+

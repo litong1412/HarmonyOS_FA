@@ -1,0 +1,16 @@
+<div class="dialog-container" show="{{showObj}}">
+    <image class="pair-hint-image" src="{{deviceResource.pair_hint_image}}">
+    </image>
+    <text class="pair-dialog-title" style="font-size: 16px;">
+        {{ deviceResource.pair_hint_title }}
+    </text>
+    <div class="dialog-container" for = "{{ deviceResource.pair_hint_text }}">
+        <text class="pair-dialog-hint" style="font-size: 14px;">{{$item}}</text>
+    </div>
+
+    <div class="bottom-button-wrapper">
+        <text class="button-connect" onclick="exit">{{ $t('strings.public_cancel') }}</text>
+        <text class="split-line">|</text>
+        <text class="button-connect button-connect1" onclick="reConnect">{{ $t('strings.public_re_connect') }}</text>
+    </div>
+</div>

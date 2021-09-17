@@ -1,0 +1,19 @@
+<div class="dialog-container" show="{{showObj}}">
+    <image class="device-img" src="{{deviceResource.device_image}}" onclick="imgClick">
+    </image>
+<!--    <text class="device-name">-->
+<!--        {{deviceResource.device_name}}-->
+<!--    </text>-->
+    <div class="text-center">
+<!--        <progress class="min-progress" type="ring"  percent= "5" secondarypercent="10"></progress>-->
+<!--        <image src="/common/img/base/loading.gif" class="load_img"></image>-->
+        <progress class="progress" type="circular"></progress>
+        <text class="pair-hint font_weight">
+            {{$t('strings.public_pair_hint')}}
+        </text>
+    </div>
+
+    <div style="margin-top: 8px; width: 100%; flex-direction: row;">
+        <text class="button-connect" onclick="exit">{{$t('strings.public_cancel')}}</text>
+    </div>
+</div>

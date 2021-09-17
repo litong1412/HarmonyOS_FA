@@ -1,0 +1,53 @@
+.title-bar{
+    padding-top : 13px;
+    padding-bottom : 13px;
+    flex : 0;
+    position: fixed;
+    font-family: HWtext-65ST, HWtext;
+
+}
+.title-box {
+    background-color : #f1f3f5;
+}
+
+.text-center {
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.image-button {
+    object-fit: contain;
+    height: 24px;
+    width: 24px;
+}
+
+.text-title {
+    font-size: 20px;
+    margin-left: 16px;
+    font-weight: 500;
+    font-family: HWtext-65ST, HWtext;
+
+}
+
+/*------浅色主题*/
+@media (prefers-color-scheme: light) {
+    .text-title {
+        color: #000000;
+    }
+}
+/**深色主题css*/
+@media (prefers-color-scheme: dark) {
+    .text-title {
+        color: aqua;
+    }
+}

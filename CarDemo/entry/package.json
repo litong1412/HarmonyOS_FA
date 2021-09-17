@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@hmscore/hms-js-account": "^5.2.0-300",
+    "@hmscore/hms-js-base": "^5.1.0-300",
+    "base64-js": "^1.5.1"
+  }
+}

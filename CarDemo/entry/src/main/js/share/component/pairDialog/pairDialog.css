@@ -1,0 +1,56 @@
+.dialog-container {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-family: HWtext-65ST, HWtext;
+
+}
+.device-img {
+    margin-top: 24px;
+    height: 152px;
+    width: 152px;
+    object-fit: contain;
+    margin-bottom: 0px;
+}
+.device-name {
+    margin-top: 16px;
+    color: #000000;
+    font-size: 18px;
+    font-family: HWtext-65ST, HWtext;
+    text-align: center;
+    font-weight: 500;
+}
+.pair-hint {
+    color: #000000;
+/*    opacity: 0.6;*/
+    font-size: 16px;
+    margin-top: 2px;
+    font-weight: 600;
+    font-family: HWtext-55ST, HWtext;
+}
+.button-connect{
+    text-align: center;
+    color: #0A59F7;
+    font-size: 16px;
+    font-family: HWtext-65ST, HWtext;
+    flex-grow: 1;
+    margin-bottom: 24px;
+    margin-top: 10px;
+    font-weight: 500;
+}
+.text-center {
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    font-family: HWtext-65ST, HWtext;
+}
+.font_weight {
+    font-weight: 600;
+}
+.progress {
+    width: 22px;
+    height: 22px;
+    margin-top: 4px;
+    margin-right: 3px;
+}
